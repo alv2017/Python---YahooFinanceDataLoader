@@ -9,7 +9,8 @@ from the YahooFinance website. The downloaded data is in csv format.
 - download_bulk_data  
 - get_assets_from_csv
 
-##### download_bulk_data 
+
+**download_bulk_data** ( assetsList, start_date, end_date, interval, data_directory, maxNThreads=20, nTrials=3 )
 	
 Method description: downloads stocks historical data from YahooFinance in csv format.
 	
@@ -46,7 +47,8 @@ failed_downloads = download_bulk_data(assetsList, start_date, end_date, interval
 print('Failed downloads: ', failed_downloads)
 ```
 
-##### get_assets_from_csv
+**get_assets_from_csv** ( csv_file, field_list = ['Symbol', 'Company'] )
+
 	
 Method description: reads assets from the csv file and returns a list of assets.
 	csv file has to have a header, and the column containing stock symbols has
@@ -54,6 +56,8 @@ Method description: reads assets from the csv file and returns a list of assets.
 	
 Parameters:
 - csv_file - path to the csv file containing assets data
+
+Optional parameters:
 - field_list - a list containing csv file header names, 
       for example ['Symbol', 'Company']
 	
