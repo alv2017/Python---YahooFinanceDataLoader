@@ -126,19 +126,5 @@ class AssetDataRequest:
         response["error"] = 0
         response["response_object"] = rData
         return response
-       
-if __name__ == '__main__':
-    symbol = 'MSFT'
-    sdate = '2018-01-01'
-    edate = '2018-02-01'
-    interval = '1d'
-    event = 'history'
-    
-    msft = AssetDataRequest(symbol, sdate, edate, interval)
-
-    r = msft.request_download_permission()
-    print(r['status_code'])
-    print(r['cookies'])
-
     
         
