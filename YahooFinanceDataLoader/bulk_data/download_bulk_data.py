@@ -73,7 +73,4 @@ def _getBulkData(assetsList, start_date, end_date, interval, data_directory,
     
     return failed_downloads_list
 
-   
-    
-             
     
