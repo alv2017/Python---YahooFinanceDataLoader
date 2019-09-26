@@ -18,8 +18,3 @@ def set_time_point(dt):
       
     return int(input_time.timestamp())
 
-if __name__ == '__main__':
-    d = '2019-02-15'
-    print(set_time_point(d))
-
-    
