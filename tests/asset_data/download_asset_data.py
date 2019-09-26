@@ -1,7 +1,7 @@
 import unittest
+from unittest.mock import Mock, patch
 import builtins
 import os
-from unittest.mock import Mock, patch
 
 from YahooFinanceDataLoader.asset_data.download_asset_data import download_asset_data
 from YahooFinanceDataLoader.asset_data.assetDataRequest import AssetDataRequest
@@ -16,8 +16,9 @@ class TestClass_download_asset_data(unittest.TestCase):
         self.data_file_name = ("_").join([self.symbol, self.sdate, self.edate,
                                         self.interval]) + ".csv"
     
-    def test_download_directory_does_nont_exist(self):
-        """Description: download directory does not exist, raise FileNotFoundError"""
+    def test_download_directory_does_nont_exist(self): 
+        """Description: download directory does not exist, raise FileNotFoundError
+        """
         symbol = self.symbol
         sdate = self.sdate
         edate = self.edate
@@ -30,8 +31,8 @@ class TestClass_download_asset_data(unittest.TestCase):
     @patch('os.path.isdir')    
     @patch('os.path.isfile')
     def test_data_file_exists(self, mock_isfile, mock_isdir):
-        """Description: test for return value when data file already exists"""
-
+        """Description: test for return value when data file already exists
+        """
         symbol = self.symbol
         sdate = self.sdate
         edate = self.edate
@@ -61,10 +62,9 @@ class TestClass_download_asset_data(unittest.TestCase):
     @patch.object(AssetDataRequest, 'request_data_download')    
     @patch('os.path.isdir')    
     @patch('os.path.isfile')
-    def test_on_data_download_error_not_0(self, mock_isfile, mock_isdir,
+    def test_on_data_download_error(self, mock_isfile, mock_isdir,
                                           mock_request_data_download):
-        """Description: test for return value when data download response
-           contains an error (-2, -1, 1, 2)
+        """Description: test for return value when data download response contains an error (-2, -1, 1, 2)
         """  
         symbol = self.symbol
         sdate = self.sdate
@@ -93,7 +93,7 @@ class TestClass_download_asset_data(unittest.TestCase):
         for err in errors:
   
             actual_value = download_asset_data(symbol, sdate, edate, interval, data_directory)
-            self.assertEquals(mock_request_data_download.call_count, cnt+1)
+            self.assertEqual(mock_request_data_download.call_count, cnt+1)
             self.assertDictEqual(actual_value, expected_value, 
                 "The response is expected to be {}".format(expected_value)) 
                    
@@ -105,8 +105,7 @@ class TestClass_download_asset_data(unittest.TestCase):
     @patch('os.path.isfile')
     def test_on_success(self, mock_isfile, mock_isdir,
                         mock_request_data_download, mock_open):
-        """Description: test for return value when data download response
-           contains an error (-2, -1, 1, 2)
+        """Description: test for return value on success
         """  
         symbol = self.symbol
         sdate = self.sdate
