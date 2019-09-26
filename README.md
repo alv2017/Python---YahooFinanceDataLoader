@@ -13,6 +13,8 @@ from the YahooFinance website. The downloaded data is in csv format.
 **download_bulk_data** ( assetsList, start_date, end_date, interval, data_directory, maxNThreads=20, nTrials=3 )
 	
 Method description: downloads stocks historical data from YahooFinance in csv format.
+
+Return Value: a list of symbols for which download has failed
 	
 Parameters:
 - assetsList - list of assets, for example ['AAPL', 'MSFT', 'NVDA']
@@ -53,6 +55,8 @@ print('Failed downloads: ', failed_downloads)
 Method description: reads assets from the csv file and returns a list of assets.
 	csv file has to have a header, and the column containing stock symbols has
 	to be named 'Symbol'
+
+Return Value: a list of asset symbols read from the csv file
 	
 Parameters:
 - csv_file - path to the csv file containing assets data
