@@ -1,5 +1,5 @@
 import unittest
-from YahooFinanceDataLoader import AssetDataRequest
+from YahooFinanceDataLoader.asset_data.assetDataRequest import AssetDataRequest
 
 class TestClass_AssetDataRequest_init(unittest.TestCase):
     def setUp(self):         
@@ -14,8 +14,9 @@ class TestClass_AssetDataRequest_init(unittest.TestCase):
             'ts': 1517356800
             }
         
-    def test_initialized_correctly(self):
-        """ Testing initialization of AssetDataRequest object"""
+    def test_initialize_with_correct_parameters(self):
+        """ Description: initialization of AssetDataRequest object when parameters are correct
+        """
         aSymbol = self.asset_symbol
         sdate  = self.start_date['date']
         edate = self.end_date['date']
@@ -33,7 +34,8 @@ class TestClass_AssetDataRequest_init(unittest.TestCase):
         
         
     def test_initialize_with_wrong_dates(self):
-        """Start date is greater than end date"""
+        """Description: raise ValueError when start date is greater than end date
+        """
         aSymbol = self.asset_symbol
         sdate  = self.end_date['date']
         edate = self.start_date['date']

@@ -13,7 +13,8 @@ class TestClass_AssetDataRequest_request_download_permission(unittest.TestCase):
     
     @patch.object(requests, 'get', side_effect=requests.exceptions.ConnectionError)
     def test_return_value_on_connection_error(self, requests):
-        """ Description: method return value when ConnectionError occurs"""
+        """ Description: verification of method return value when ConnectionError occurs
+        """
         
         expected_resp = {
             "cookies": None,
@@ -33,7 +34,8 @@ class TestClass_AssetDataRequest_request_download_permission(unittest.TestCase):
         
     @patch.object(requests, 'get', side_effect=requests.exceptions.Timeout)
     def test_return_value_on_timeout_error(self, requests):
-        """ Description: method return value when Timeout error occurs"""
+        """ Description: verification of method return value when Timeout error occurs
+        """
     
         expected_resp = {
             "cookies": None,
@@ -52,7 +54,7 @@ class TestClass_AssetDataRequest_request_download_permission(unittest.TestCase):
     
     @patch.object(requests, 'get')    
     def test_response_on_no_crumb_received(self, mock_requests_get):
-        """ Description: method return value when no crumb received
+        """ Description: verification of method return value when no crumb received
             (no download permission received)
         """
         
@@ -83,6 +85,8 @@ class TestClass_AssetDataRequest_request_download_permission(unittest.TestCase):
         
     @patch.object(requests, 'get')    
     def test_response_on_success(self, mock_requests_get):
+        """ Description: verification of method return value on success
+        """
         # response cookies
         cookie_jar = requests.cookies.RequestsCookieJar()
         cookie_jar.set("download_permission_cookie", "welcome", domain='.yahoo.com')

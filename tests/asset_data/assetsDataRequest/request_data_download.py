@@ -15,8 +15,8 @@ class TestClass_AssetDataRequest_request_data_download(unittest.TestCase):
     def test_return_value_on_download_permission_error_1(self, 
         request_download_permission):
         """
-            Description: method return value when request_download_permission
-            method returns response['error']=1
+            Description: verification of method return value when 
+            request_download_permission method returns response['error']=1
         """
         
         # mocking a response from request_download_permission
@@ -42,8 +42,8 @@ class TestClass_AssetDataRequest_request_data_download(unittest.TestCase):
     def test_return_value_on_download_permission_error_2(self, 
         request_download_permission):
         """
-            Description: method return value when request_download_permission
-            method returns response['error']=2
+            Description: verification of method return value when 
+            request_download_permission method returns response['error']=2
         """
         
         # mocking a response from requests_download_permission
@@ -70,9 +70,10 @@ class TestClass_AssetDataRequest_request_data_download(unittest.TestCase):
     @patch.object(requests, 'get', side_effect=requests.exceptions.ConnectionError)
     def test_return_value_on_connection_error(self, 
             requests, request_download_permission):
-        """ Description: method return value when ConnectionError occurs"""
-        
-        
+        """ 
+            Description: method return value when ConnectionError occurs
+        """
+          
         expected_response = {
             "response_object": None,
             "status_code": -1,
@@ -101,7 +102,9 @@ class TestClass_AssetDataRequest_request_data_download(unittest.TestCase):
     @patch.object(requests, 'get', side_effect=requests.exceptions.Timeout)
     def test_return_value_on_timeout_error(self, 
             requests, request_download_permission):
-        """ Description: method return value when Timeout occurs"""
+        """ 
+            Description: method return value when Timeout occurs
+        """
         
         expected_response = {
             "response_object": None,
@@ -171,7 +174,9 @@ class TestClass_AssetDataRequest_request_data_download(unittest.TestCase):
     @patch.object(requests, 'get')
     def test_return_value_on_success(self, 
             mock_requests_get, request_download_permission):
-        """ Description: method return value on successful download"""
+        """ 
+            Description: method return value on successful download
+        """
         # response mock
         response_object = Mock()
         response_object.status_code = 200
