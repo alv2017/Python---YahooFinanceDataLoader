@@ -146,12 +146,4 @@ class TestClass_download_asset_data(unittest.TestCase):
         self.assertDictEqual(actual_value, expected_value, 
                         "The response is expected to be {}".format(expected_value)) 
 
-if __name__ == '__main__':
-    unittest.main() 
-    
-
-
-
-
      
-        
