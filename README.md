@@ -14,24 +14,23 @@ from the YahooFinance website. The downloaded data is in csv format.
 	
 Method description: downloads stocks historical data from YahooFinance in csv format.
 
-Return Value: a list of symbols for which download has failed
+**Return Value**: a list of symbols for which download has failed
 	
-Parameters:
+###### Parameters:
 - assetsList - list of assets, for example ['AAPL', 'MSFT', 'NVDA']
 - start_date - start date for your download ('yyyy-mm-dd'), for example '2019-01-01'
 - end_date - end date for your download ('yyyy-mm-dd'), for example '2019-01-31'
 - interval - download interval, '1d' for daily, '1wk' for weekly, '1mo'
 - data_directory - directory location to save downloaded data
 	
-Optional parameters:
-
+###### Optional parameters:
 - maxNThreads - maximum number of threads to use for data download, 
 		the default value is 20.
 - nTrials - number of trials to be used for download, the default
 		value is 3. Explanation: due to connectivity issues your download may fail, 
 		and it is worth trying to re-send your download request.
 		
-Example:
+###### Example:
 
 ```python
 from YahooFinanceDataLoader import download_bulk_data
@@ -56,16 +55,16 @@ Method description: reads assets from the csv file and returns a list of assets.
 	csv file has to have a header, and the column containing stock symbols has
 	to be named 'Symbol'
 
-Return Value: a list of asset symbols read from the csv file
+**Return Value**: a list of asset symbols read from the csv file
 	
-Parameters:
+###### Parameters:
 - csv_file - path to the csv file containing assets data
 
-Optional parameters:
+###### Optional parameters:
 - field_list - a list containing csv file header names, 
       for example ['Symbol', 'Company']
 	
-Example:
+###### Example:
 
 ```python
 from YahooFinanceDataLoader import download_bulk_data
