@@ -60,7 +60,7 @@ class AssetDataRequest:
         jar = rPermissionData.cookies
         
         # crumb
-        rContent = rPermissionData.content.decode('unicode-escape')
+        rContent = rPermissionData.content.decode("raw_unicode_escape")
         pattern = re.compile('"CrumbStore":{"crumb":"(.+?)"}')
         m = re.search(pattern, rContent)
 
