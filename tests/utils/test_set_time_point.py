@@ -1,5 +1,4 @@
 import unittest
-import datetime
 from YahooFinanceDataLoader.utils import set_time_point
 
 class Test_SetTimePoint(unittest.TestCase):
