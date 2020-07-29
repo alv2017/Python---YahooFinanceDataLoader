@@ -1,13 +1,31 @@
 import unittest
 import os
+import csv
 from YahooFinanceDataLoader import get_assets_from_csv
 
 class Test_GetAssetsFromCSV(unittest.TestCase):
-    def setUp(self):         
-        # test data
+    def setUp(self):      
+        data = [{"Symbol":"AAPL", "Company":"Apple"},                
+                {"Symbol":"IBM", "Company":"IBM"},
+                {"Symbol":"MSFT", "Company":"Microsoft"},
+            ]   
+        # we will create a test file: assets.csv
         data_directory = os.path.dirname(__file__)
-        self.test_file = os.path.join(data_directory, '../fixtures/assets.csv')
+        file_name = "assets.csv"
+        self.test_file = os.path.join(data_directory, file_name)
         self.field_list = ['Symbol', 'Company']
+        
+        with open(self.test_file, 'w', newline='') as csvfile:
+            fieldnames = self.field_list
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            for row in data:
+                writer.writerow(row)     
+        
+    def tearDown(self):
+        # we will remove a test file: assets.csv
+        if os.path.isfile(self.test_file):
+            os.remove(self.test_file)
          
     def test_returns_list_of_assets(self):  
         """Description: the function reads the assets from the existing csv file. 
