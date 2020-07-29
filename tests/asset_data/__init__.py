@@ -1,4 +1,4 @@
-from . assetsDataRequest.init import *
+from .tests.asset_data.assetsDataRequest.test_request_initialization import *
 
 from . assetsDataRequest.request_data_download import *
 
