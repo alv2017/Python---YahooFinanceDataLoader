@@ -39,6 +39,7 @@ class Test_CSVFileNotExists(unittest.TestCase):
     def test_raise_error_if_file_not_exists(self):
         """Description: if we try to read the assets from nonexistent file, error is raised
         """
-        self.assertRaises(FileNotFoundError, get_assets_from_csv, 'nonexistant_file')
+        field_list = ['Symbol', 'Company']
+        self.assertRaises(FileNotFoundError, get_assets_from_csv, 'nonexistant_file', field_list)
   
     
