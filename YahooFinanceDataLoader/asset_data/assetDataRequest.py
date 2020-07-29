@@ -15,7 +15,10 @@ class AssetDataRequest:
         else:
             raise ValueError("Start date is less than or equal to the end date")
         
-        self.interval = interval
+        if interval in ['1d', '1wk', '1mo']:
+            self.interval = interval
+        else:
+            raise ValueError("Invalid interval value. Allowed interval values: '1d', '1wk', '1mo'.")
         
         self.event = event
         
@@ -126,5 +129,4 @@ class AssetDataRequest:
         response["error"] = 0
         response["response_object"] = rData
         return response
-    
-        
+         
