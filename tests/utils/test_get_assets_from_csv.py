@@ -16,7 +16,8 @@ class Test_GetAssetsFromCSV(unittest.TestCase):
         actual_assets_list = get_assets_from_csv(self.test_file, self.field_list)
         expected_assests_list = ['AAPL', 'IBM', 'MSFT']
         self.assertEqual(actual_assets_list, expected_assests_list)
-
+        
+class Test_CSVFileNotExists(unittest.TestCase):
     def test_raise_error_if_file_not_exists(self):
         """Description: if we try to read the assets from nonexistent file, error is raised
         """
