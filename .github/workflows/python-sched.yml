@@ -4,10 +4,6 @@
 name: Python application
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
   schedule:
     - cron:  '10 * * * *'
 
@@ -27,4 +23,5 @@ jobs:
     - name: Test with unittest
       run: |
         export PYTHONPATH=YahooFinanceDataLoader
-        python -m unittest
+        python -m unittest tests/asset_data/test_assetDataRequest/test_request_actual_download_permission.py
+        python -m unittest tests/asset_data/test_assetDataRequest/test_request_actual_data_download.py
