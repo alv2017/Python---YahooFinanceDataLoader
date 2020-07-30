@@ -23,7 +23,7 @@ jobs:
     - name: Test with unittest -v
       run: |
         export PYTHONPATH=YahooFinanceDataLoader
-        # Running test for download permission requests
-        python -m unittest tests/asset_data/test_assetDataRequest/test_request_actual_download_permission.py
-        # Running tests for data download requests
-        python -m unittest tests/asset_data/test_assetDataRequest/test_request_actual_data_download.py
+        echo ***Running test for download permission requests***
+        python -m unittest -v tests/asset_data/test_assetDataRequest/test_request_actual_download_permission.py
+        echo ***Running tests for data download requests***
+        python -m unittest -v tests/asset_data/test_assetDataRequest/test_request_actual_data_download.py
