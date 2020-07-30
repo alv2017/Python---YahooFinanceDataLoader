@@ -26,4 +26,4 @@ jobs:
     - name: Test with unittest
       run: |
         export PYTHONPATH=YahooFinanceDataLoader
-        unittest -v
+        python -m unittest -v
