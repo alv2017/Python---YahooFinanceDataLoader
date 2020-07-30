@@ -11,7 +11,8 @@ def set_time_point(dt):
     
     # input date is valid
     try:
-        input_time = datetime.datetime(int(year), int(month), int(day)) 
+        input_time = datetime.datetime(int(year), int(month), int(day), 
+                                       tzinfo=datetime.timezone.utc) 
 
     except ValueError as err:
         raise err

@@ -7,7 +7,7 @@ class Test_SetTimePoint(unittest.TestCase):
         """Description: we test function return value for known date and known timestamp
         """
         test_date = '2017-05-12'
-        test_timestamp =  1494543600
+        test_timestamp =  1494547200
         self.assertEqual(test_timestamp, set_time_point(test_date))
         
     def test_return_timestamp_correct_date_2(self):
