@@ -37,7 +37,7 @@ class Test_GetAssetsFromCSV(unittest.TestCase):
         
 class Test_CSVFileNotExists(unittest.TestCase):
     def setUp(self):   
-        print("\n[Label: Unit. get_assets_from_csv]") 
+        pass
         
     def test_raise_error_if_file_not_exists(self):
         """Description: if we try to read the assets from nonexistent file, error is raised
