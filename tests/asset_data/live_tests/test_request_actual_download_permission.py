@@ -5,7 +5,6 @@ class TestClass_AssetDataRequest_ActualDownloadPermissionRequest(unittest.TestCa
     """AssetDataRequest, actual request_download_permission
     """
     def setUp(self):
-        print("\n[Label: Live. AssetDataRequest, actual request_download_permission]")
         self.start_date = "2018-01-01"
         self.end_date = "2018-01-31"
         self.interval = "1d"
