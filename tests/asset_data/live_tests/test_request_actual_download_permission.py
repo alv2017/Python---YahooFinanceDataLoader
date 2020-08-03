@@ -2,10 +2,10 @@ import unittest
 from YahooFinanceDataLoader.asset_data.assetDataRequest import AssetDataRequest
 
 class TestClass_AssetDataRequest_ActualDownloadPermissionRequest(unittest.TestCase):
-    """Comment: this test suit contains tests for actual data download permission request
-       We want to be sure that we a receiving the download permission data
+    """AssetDataRequest, actual request_download_permission
     """
     def setUp(self):
+        print("\n[Label: Live. AssetDataRequest, actual request_download_permission]")
         self.start_date = "2018-01-01"
         self.end_date = "2018-01-31"
         self.interval = "1d"

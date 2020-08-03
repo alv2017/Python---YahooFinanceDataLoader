@@ -4,7 +4,8 @@ import csv
 from YahooFinanceDataLoader import get_assets_from_csv
 
 class Test_GetAssetsFromCSV(unittest.TestCase):
-    def setUp(self):      
+    def setUp(self):   
+        print("\n[Label: Unit. utils.get_assets_from_csv]")      
         data = [{"Symbol":"AAPL", "Company":"Apple"},                
                 {"Symbol":"IBM", "Company":"IBM"},
                 {"Symbol":"MSFT", "Company":"Microsoft"},
@@ -36,6 +37,9 @@ class Test_GetAssetsFromCSV(unittest.TestCase):
         self.assertEqual(actual_assets_list, expected_assests_list)
         
 class Test_CSVFileNotExists(unittest.TestCase):
+    def setUp(self):   
+        print("\n[Label: Unit. get_assets_from_csv]") 
+        
     def test_raise_error_if_file_not_exists(self):
         """Description: if we try to read the assets from nonexistent file, error is raised
         """
