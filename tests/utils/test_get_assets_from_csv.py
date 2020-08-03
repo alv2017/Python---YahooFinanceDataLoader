@@ -4,8 +4,7 @@ import csv
 from YahooFinanceDataLoader import get_assets_from_csv
 
 class Test_GetAssetsFromCSV(unittest.TestCase):
-    def setUp(self):   
-        print("\n[Label: Unit. utils.get_assets_from_csv]")      
+    def setUp(self):        
         data = [{"Symbol":"AAPL", "Company":"Apple"},                
                 {"Symbol":"IBM", "Company":"IBM"},
                 {"Symbol":"MSFT", "Company":"Microsoft"},

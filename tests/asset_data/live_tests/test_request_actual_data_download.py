@@ -5,7 +5,6 @@ class TestClass_AssetDataRequest_ActualDataDownloadRequest(unittest.TestCase):
     """AssetDataRequest, actual request_data_download
     """
     def setUp(self):
-        print("\n[Label: Live. AssetDataRequest, actual request_data_download]")
         self.start_date = {
             "date":"2018-01-01",
             "ts": 1514764800

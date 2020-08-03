@@ -3,7 +3,7 @@ from YahooFinanceDataLoader.utils import set_time_point
 
 class Test_SetTimePoint(unittest.TestCase):
     def setUp(self):
-        print("\n[Label: Unit. utils.set_time_point]")   
+        pass  
            
     def test_return_timestamp_correct_date_1(self):
         """Description: we test function return value for known date and known timestamp
