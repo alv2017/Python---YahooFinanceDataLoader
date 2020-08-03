@@ -2,9 +2,10 @@ import unittest
 from YahooFinanceDataLoader.asset_data.assetDataRequest import AssetDataRequest
 
 class TestClass_AssetDataRequest_ActualDataDownloadRequest(unittest.TestCase):
-    """Comment: this test suit contains tests for actual data downloads
+    """AssetDataRequest, actual request_data_download
     """
     def setUp(self):
+        print("\n[Label: Live. AssetDataRequest, actual request_data_download]")
         self.start_date = {
             "date":"2018-01-01",
             "ts": 1514764800

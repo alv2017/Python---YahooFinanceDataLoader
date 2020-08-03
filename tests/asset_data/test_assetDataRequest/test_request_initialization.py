@@ -3,6 +3,7 @@ from YahooFinanceDataLoader.asset_data.assetDataRequest import AssetDataRequest
 
 class TestClass_AssetDataRequest_Initialization(unittest.TestCase):
     def setUp(self):
+        print("\n[Label: Unit. AssetDataRequest, initialization]")   
         self.start_date = {
             "date":"2018-01-01",
             "ts": 1514764800

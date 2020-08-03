@@ -4,7 +4,8 @@ from unittest.mock import Mock, patch
 from YahooFinanceDataLoader.asset_data.assetDataRequest import AssetDataRequest
 
 class TestClass_AssetDataRequest_request_download_permission(unittest.TestCase):
-    def setUp(self):         
+    def setUp(self):   
+        print("\n[Label: Unit. AssetDataRequest.request_download_permission]")         
         self.symbol = 'MSFT'
         self.sdate = '2018-01-01'
         self.edate = '2018-01-31'
